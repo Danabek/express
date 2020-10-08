@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+
+    <%- 
+        include('./partials/header.ejs')
+    %>
+
+
+
+    <main class="main">
+        <article class="hero hero--login">
+            <h1 class=".heading heading--large">
+                Log in
+            </h1>
+            <a class="anchor anchor--opacity" href="/signup">
+                <h2 class=".heading heading--large">
+                    Sign up
+                </h2>
+
+            </a>
+
+        </article>
+
+        <article class="login">
+            <section>
+                <div class="login__auth-via">
+                    <button class="btn btn--outline">Github</button>
+                    <button class="btn btn--outline">Google</button>
+                </div>
+                <div class="login__alternative">
+                    <i class="cursiv absolute absolute--align-center absolute--horizontal-center">or</i>
+                    <hr>
+                </div>
+                <form id="login" class="form form--login">
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input name="email" type="text">
+                        <span id="email-err" class="error"> </span>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="password">Password</label>
+                            <input name="password" type="password">
+                            <span id="password-err" class="error"> </span>
+
+                        </div>
+
+                        <div>
+                            <button class="btn btn--primary"> Log in </button>
+                        </div>
+
+                    </div>
+                </form>
+
+            </section>
+
+            <section>
+                <img alt="デザイン事務所ココドル｜大阪｜SEA TO SUMMITびわ湖東近江のTシャツ#design #graphicdesign #graphicdesigner #art #logo #logodesign #illustrator #illustration #event #cocodoru #デザイン #Tシャツ #イラスト #アート #線画"
+                    class="img--responsive" importance="auto" loading="auto"
+                    src="https://i.pinimg.com/564x/64/fe/86/64fe86a2488ed30f1ace46e95bfc8703.jpg">
+
+            </section>
+
+        </article>
+
+
+    </main>
+    <%- 
+    include('./partials/footer.ejs')
+    %>
+    <script>
+        const form = document.getElementById('login');
+
+        const emailError = document.getElementById('email-err');
+        const passwordError = document.getElementById('password-err');
+
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = form.email.value;
+            const password = form.password.value;
+
+
+            try {
+                const res = await fetch('/login', {
+                    method: 'POST',
+                    body: JSON.stringify({ email, password }),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await res.json();
+                console.log(data);
+                if (data.errors) {
+                    data.errors.email ? emailError.classList.add('error--open') : emailError.classList.remove('error--open');
+                    data.errors.password ? passwordError.classList.add('error--open') : passwordError.classList.remove('error--open');
+                    emailError.textContent = data.errors.email;
+                    passwordError.textContent = data.errors.password;
+                }
+                if (data.user) {
+                    document.location.href = '/';
+                }
+
+            }
+            catch (err) {
+                console.log('!', err);
+            }
+        })
+    </script>
+</body>
+
+</html>

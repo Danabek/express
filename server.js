@@ -3,6 +3,8 @@ const fs = require('fs');
 const _ = require('lodash');
 const pug = require('pug');
 
+const authRoutes = require('./controllers/AuthController');
+
 const server = http.createServer((req, res) => {
 
 
@@ -13,7 +15,7 @@ const server = http.createServer((req, res) => {
 
     const greed = _.once(() => {
         console.log('once');
-    })
+    });
 
 
     app.set('view engine', 'ejs')

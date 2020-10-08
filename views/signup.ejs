@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+
+    <%- 
+        include('./partials/header.ejs')
+    %>
+
+
+
+    <main class="main">
+        <article class="hero hero--login">
+            <a class="anchor anchor--opacity" href="/login">
+                <h1 class=".heading heading--large">
+                    Log in
+                </h1>
+
+            </a>
+            <h2 class=".heading heading--large">
+                Sign up
+            </h2>
+
+        </article>
+
+        <article class="login">
+            <section>
+                <img alt="デザイン事務所ココドル｜大阪｜SEA TO SUMMITびわ湖東近江のTシャツ#design #graphicdesign #graphicdesigner #art #logo #logodesign #illustrator #illustration #event #cocodoru #デザイン #Tシャツ #イラスト #アート #線画"
+                    class="img--responsive" importance="auto" loading="auto"
+                    src="https://i.pinimg.com/564x/64/fe/86/64fe86a2488ed30f1ace46e95bfc8703.jpg">
+
+            </section>
+
+
+            <section>
+                <div class="login__auth-via">
+                    <button class="btn btn--outline">Github</button>
+                    <button class="btn btn--outline">Google</button>
+                </div>
+                <div class="login__alternative">
+                    <i class="cursiv absolute absolute--align-center absolute--horizontal-center">or</i>
+                    <hr>
+                </div>
+                <form id="signup" class="form form--login">
+                    <div>
+                        <label for="username">Usermane</label>
+
+                        <input name="username" type="text">
+                        <span id="username-err" class="error"> </span>
+
+                    </div>
+
+                    <div class="form__input-box">
+                        <label for="email">Email</label>
+                        <input required name="email" type="text">
+                        <span id="email-err" class="error"> test </span>
+                    </div>
+                    <div>
+                        <div class="form__input-box">
+                            <label for="email">Password</label>
+                            <input required name="password" type="password">
+                            <span id="pass-err" class="error"> test </span>
+                        </div>
+                        <div>
+                            <label for="email">Confirm Password</label>
+                            <input name="confirm_password" type="password">
+                            <span id="confirm_password-err" class="error"> </span>
+
+                        </div>
+                        <div>
+                            <button class="btn btn--primary"> Sign up </button>
+                        </div>
+
+                    </div>
+                </form>
+
+            </section>
+
+
+
+        </article>
+
+
+    </main>
+    <%- 
+    include('./partials/footer.ejs')
+    %>
+    <script>
+        const form = document.getElementById('signup');
+        const emailError = document.getElementById('email-err');
+        const usernameError = document.getElementById('username-err');
+        const passwordError = document.getElementById('pass-err');
+        const confirmPasswordError = document.getElementById('confirm_password-err')
+
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = form.email.value;
+            const password = form.password.value;
+            const username = form.username.value;
+            const confirm_password = form.confirm_password.value;
+
+            if (password !== confirm_password) {
+                passwordError.textContent = "password doen't much";
+                passwordError.classList.add('error--open');
+                return
+            } else {
+                passwordError.classList.remove('error--open');
+            }
+
+            // reset error 
+
+            console.log(email, password);
+
+            try {
+                const res = await fetch('/signup', {
+                    method: 'POST',
+                    body: JSON.stringify({ email, password, username, name: "Danabek", surname: "Sakhmet" }),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await res.json();
+                console.log(data);
+                if (data.errors) {
+
+                    data.errors.email ? emailError.classList.add('error--open') : emailError.classList.remove('error--open');
+                    data.errors.password ? passwordError.classList.add('error--open') : passwordError.classList.remove('error--open');
+                    data.errors.password ? usernameError.classList.add('error--open') : usernameError.classList.remove('error--open');
+                    usernameError.textContent = data.errors.email;
+                    emailError.textContent = data.errors.email;
+                    passwordError.textContent = data.errors.password;
+                }
+
+                if (data.user) {
+                    location.assign('/')
+                }
+
+            }
+            catch (err) {
+
+                console.log(err);
+
+            }
+        })
+    </script>
+</body>
+
+</html>

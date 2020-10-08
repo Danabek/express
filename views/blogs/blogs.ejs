@@ -15,14 +15,21 @@
         <h1 class=".heading heading--large">
             Blogs
         </h1>
+        <a href="/blogs/create-post">+ New Post</a>
 
         <% if (blogs.length > 0)  { %>
         <% blogs.forEach(element => { %>
         <article class="post">
             <div class="post__title">
-                <h3 class=".heading heading">
-                    <%= element.title %>
-                </h3>
+                <a href="/blogs/<%= element.id %>">
+                    <h3 class=".heading heading--regular">
+                        <%= element.title %>
+                    </h3>
+                    <p>
+                        <%= element.createdAt %>
+                    </p>
+
+                </a>
             </div>
             <div class="post__body">
                 <%= element.snippet %>

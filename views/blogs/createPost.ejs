@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 
 <body>
     <%- 
-        include('./partials/header.ejs')
+        include('../partials/header.ejs')
     %>
     <main class="main">
         <h1 class=".heading heading--large">
@@ -18,7 +18,7 @@
             </div>
             <div>
                 <label for="">Snippet</label>
-                <input type="text">
+                <input name="snippet" type="text">
             </div>
             <div>
                 <label for="">Text</label>
@@ -31,7 +31,7 @@
         </form>
     </main>
     <%- 
-    include('./partials/footer.ejs')
+    include('../partials/footer.ejs')
     %>
 </body>
 
