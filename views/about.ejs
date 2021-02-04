@@ -3,21 +3,19 @@
 
 <%- include('./partials/head.ejs') %>
 
-<body>
-    <%- 
-        include('./partials/header.ejs')
-    %>
-    <main class="main">
-        <article class="main__hero">
-            <h1 class=".heading heading--large">
-                About
-            </h1>
+    <body>
+        <%- include('./partials/header.ejs') %>
+            <%- include('./partials/aside.ejs') %>
 
-        </article>
-    </main>
-    <%- 
-        include('./partials/footer.ejs')
-    %>
-</body>
+                <main class="main">
+                    <article class="main__hero">
+                        <h1 class=".heading heading--large">
+                            About
+                        </h1>
+
+                    </article>
+                </main>
+                <%- include('./partials/footer.ejs') %>
+    </body>
 
 </html>

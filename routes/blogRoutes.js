@@ -11,6 +11,7 @@ router.get('/', requireAuth, blogController.blog_index);
 router.post('/', blogController.blog_create_post);
 
 
+
 router.get('/create-post', blogController.blog_create_get);
 
 router.get('/:id', blogController.blog_details);

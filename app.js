@@ -13,6 +13,7 @@ const { render } = require('pug');
 // Routers
 
 const blogRoutes = require('./routes/blogRoutes');
+const burnoeRoutes = require('./routes/burnoeRoutes');
 const authRoutes = require('./routes/authRoutes');
 const authMiddleware = require('./middleware/authMiddleware');
 
@@ -24,7 +25,7 @@ app.use(express.json());
 const dbURL = 'mongodb+srv://danabek:danabek@cluster0.mtzj8.mongodb.net/learning?retryWrites=true&w=majority';
 
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then( (result) => {  app.listen(process.env.PORT); }  )
+    .then( (result) => {  app.listen(3000); }  )
     .catch( (err) => console.log(err) );
 
 app.set('view engine', 'ejs');
@@ -33,24 +34,26 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(cookieParser());
-
+``
 app.get('*', checkUser);
 
-app.get('/', (req, res) => {
-    res.render('index', { title: 'home'});
+app.get('/', requireAuth,  (req, res) => {
+    res.render('index' ,  { title: 'home'});
 });
 
 app.get('/profile', requireAuth,  (req, res) => {
     res.render('profile', {title: 'profile'});
 });
 
-app.get('/about', (req, res) => {
+app.get('/about', requireAuth, (req, res) => {
     res.render('about', {title: 'about'});
 });
 
 // blogs routes
+app.use('/blog',  blogRoutes);
 
-app.use('/blogs',  blogRoutes);
+// burnoe routes
+app.use('/burnoe', burnoeRoutes);
 
 // cookies
 

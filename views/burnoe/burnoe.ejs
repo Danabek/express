@@ -32,11 +32,16 @@
     }
 
     .hero-links {
+        padding: 26px;
         flex: 1;
     }
 
     .hero-main {
         flex: 2;
+    }
+
+    .list li {
+        margin-bottom: 8px;
     }
 
 
@@ -51,18 +56,25 @@
     .heading--lvl4 {
         text-transform: uppercase;
         font-size: 14px;
+        font-family: monospace;
     }
 
     .features {
         display: flex;
     }
+
+    @media screen and (max-width: 500px) {
+        .features {
+            flex-direction: column;
+        }
+    }
 </style>
 
-<%- include('./partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 
     <body>
-        <%- include('./partials/header.ejs') %>
-            <%- include('./partials/aside.ejs') %>
+        <%- include('../partials/header.ejs') %>
+            <%- include('../partials/aside.ejs') %>
                 <main class="main">
                     <article class="hero border-bottom">
                         <section class="hero-main">
@@ -77,8 +89,8 @@
                                     <circle cx="96" cy="96" r="32" fill="#fff" />
                                 </svg>
 
-                                <h1 class="heading heading--normal">
-                                    New year
+                                <h1 class=".heading heading--normal">
+                                    Burnoe 
                                 </h1>
                             </div>
                             <div>
@@ -96,12 +108,17 @@
 
                             <ul class="list">
                                 <li>
-                                    <a href="https://material.io/resources/icons/?style=baseline">Material icons</a>
+                                    <a href="/burnoe/2020">2020 August report</a>
                                 </li>
                                 <li>
-                                    <a href="https://arzamas.academy/"> Arzamas Academy</a>
+                                    <a href="/burnoe/2019">2019 August report</a>
                                 </li>
-                                <li></li>
+                                <li>
+                                    <a href="/burnoe/2018">2018 August report</a>
+                                </li>
+                                <li>
+                                    <a href="/burnoe/2017">2017 August report</a>
+                                </li>
                             </ul>
                         </section>
                         <p>
@@ -111,21 +128,21 @@
 
                     <article class="features">
                         <section>
-                            <h3>Title 3-1</h3>
+                            <h3>Goals</h3>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sapiente itaque impedit
                                 quod, velit asperiores amet nesciunt est hic praesentium.
                             </p>
                         </section>
                         <section>
-                            <h3>Title 3-2</h3>
+                            <h3>Nonimines</h3>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sapiente itaque impedit
                                 quod, velit asperiores amet nesciunt est hic praesentium.
                             </p>
                         </section>
                         <section>
-                            <h3>Title 3-3</h3>
+                            <h3>Momets</h3>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sapiente itaque impedit
                                 quod, velit asperiores amet nesciunt est hic praesentium.
@@ -134,43 +151,13 @@
                     </article>
 
                     <article>
-                        <section>
-                            <h2>
-                                Useful links
-                            </h2>
-                            <ul class="list">
-                                <li>
-                                    <a href="https://material.io/resources/icons/?style=baseline">
-                                        <svg style=" width: 25px; height: 25px;
-                                            " xmlns="http://www.w3.org/2000/svg" id="content" viewBox="0 0 192 192">
-                                            <circle cx="96" cy="96" r="96" fill="#2979ff" />
-                                            <rect width="192" height="192" transform="translate(192 192) rotate(180)"
-                                                fill="none" />
-                                            <circle cx="96" cy="96" r="64" fill="#40c4ff" />
-                                            <circle cx="96" cy="96" r="32" fill="#fff" />
-                                        </svg>
-                                        <p>
-                                            Google Icons
-                                        </p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.youtube.com/watch?v=VVGgacjzc2Y&ab_channel=TheNetNinja">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24">
-                                            <path
-                                                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
-                                        </svg>
-                                        Net ninjs node js
-                                    </a>
-                                </li>
-                                <li></li>
-                            </ul>
-                        </section>
-
+                        <iframe scrolling="no" allowfullscreen="" gesture="media" allow="autoplay; encrypted-media"
+                            src="https://yastatic.net/yandex-video-player-iframe-api-bundles/1.0-5946/frame.html#post_message_config=true&amp;vsid=7dab7a075f15e6f7165ec2610fbac920461bffd27642xWEBx5946x1610008739&amp;from=disk"
+                            style="width: 100%; height: 100%; border-width: 0px; display: block;"></iframe>
                     </article>
 
                 </main>
+                <%- include('../partials/footer.ejs') %>
     </body>
 
 </html>

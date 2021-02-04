@@ -8,27 +8,28 @@ html {
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    color: #222;
+    background-color: #121212;
+    color: rgba(255, 255, 255, 0.60);
 }
 
 .header-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
-    box-shadow: 0 10px 20px -7px rgba(160, 44, 219, 0.07);
-    background-color: #ffffff;
+    padding: 10px 20px 0 20px;
+    background-color: hsla(0, 0%, 100%, 0.16);
 }
 
 .header-top__logo a {
     text-decoration: none;
-    color: black;
+    color: rgba(255, 255, 255, 0.87);
 }
 
 .header-top__logo h2 {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1em;
     font-weight: 700;
+    color: rgba(255, 255, 255, 0.87);
 }
 
 .header-top__navbar {
@@ -47,8 +48,7 @@ html {
 .header-top__navbar li a {
     padding: 10px;
     font-size: 18px;
-    color: #7D7A9E;
-    ;
+    color: #7D7A9E;;
     text-decoration: none;
 }
 
@@ -99,6 +99,7 @@ html {
 .heading {
     font-weight: 300;
     margin-top: 40px;
+    color: rgba(255, 255, 255, 0.87);
 }
 
 .heading--large {
@@ -109,9 +110,15 @@ html {
     font-size: 2rem;
 }
 
+.heading--normal{
+    margin: 0;
+    font-size: 60px;
+}
+
 .main {
-    max-width: 700px;
+    max-width: 1000px;
     margin: 0 auto;
+    margin-left: 72px;
 
 }
 
@@ -142,6 +149,8 @@ html {
     outline: none;
     width: 100%;
     font-size: 16px;
+    background-color: transparent;
+    color: #ccc;
 }
 
 .form__input-box{
@@ -162,6 +171,10 @@ html {
     outline: none;
 }
 
+.login__fields{
+    margin-right: 20px;
+}
+
 .form textarea:focus {
     border: 1px solid rgb(129, 129, 129);
 }
@@ -171,6 +184,8 @@ html {
     font-size: 18px;
     font-weight: 500;
 }
+
+
 
 .btn--primary{
     border-radius: 5px;
@@ -187,10 +202,16 @@ html {
 
 .btn--outline{
     border-radius: 5px;
-    border: 1px solid #222;
+    border: 1px solid rgba(255, 255, 255, 0.74);
     color: #000;
     background: none;
     transition: all 0.2s ease-out;
+}
+
+.btn--dark-primary{
+    background-color: rgba(255, 255, 255, 0.87);
+    border: 1px solid rgba(255, 255, 255, 0.87);
+    border-radius: 5px;
 }
 
 .btn--outline:hover{
@@ -222,7 +243,7 @@ a{
 }
 
 .header-top__logo a svg {
-    width: 45px;
+    width: 32px;
     margin-right: 5px;
 }
 
@@ -349,4 +370,13 @@ a{
     padding-top: 20px;
 
     flex: 10 1 300px;
+}
+
+
+.icon{
+    width: 24px;
+}
+
+.border-bottom{
+    border-bottom: 1px solid #ccc;
 }

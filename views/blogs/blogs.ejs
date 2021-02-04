@@ -3,50 +3,49 @@
 
 <%- include('../partials/head.ejs') %>
 
-<body>
+    <body>
 
-    <%- 
-        include('../partials/header.ejs')
-    %>
+        <%- include('../partials/header.ejs') %>
+
+            <%- include('../partials/aside.ejs') %>
 
 
 
-    <main class="main">
-        <h1 class=".heading heading--large">
-            Blogs
-        </h1>
-        <a href="/blogs/create-post">+ New Post</a>
 
-        <% if (blogs.length > 0)  { %>
-        <% blogs.forEach(element => { %>
-        <article class="post">
-            <div class="post__title">
-                <a href="/blogs/<%= element.id %>">
-                    <h3 class=".heading heading--regular">
-                        <%= element.title %>
-                    </h3>
-                    <p>
-                        <%= element.createdAt %>
-                    </p>
+                <main class="main">
+                    <h1 class=".heading heading--large">
+                        Blog
+                    </h1>
+                    <a href="/blog/create-post">+ New Post</a>
 
-                </a>
-            </div>
-            <div class="post__body">
-                <%= element.snippet %>
-            </div>
-        </article>
-        <% }); %>
-        <% } else { %>
-        <article>
-            <h3>
-                No posts
-            </h3>
-        </article>
-        <% } %>
-    </main>
-    <%- 
-    include('../partials/footer.ejs')
-    %>
-</body>
+                    <% if (blogs.length> 0) { %>
+                        <% blogs.forEach(element=> { %>
+                            <article class="post">
+                                <div class="post__title">
+                                    <a href="/blog/<%= element.id %>">
+                                        <h3 class=".heading heading--regular">
+                                            <%= element.title %>
+                                        </h3>
+                                        <p>
+                                            <%= element.createdAt %>
+                                        </p>
+
+                                    </a>
+                                </div>
+                                <div class="post__body">
+                                    <%= element.snippet %>
+                                </div>
+                            </article>
+                            <% }); %>
+                                <% } else { %>
+                                    <article>
+                                        <h3>
+                                            No posts
+                                        </h3>
+                                    </article>
+                                    <% } %>
+                </main>
+                <%- include('../partials/footer.ejs') %>
+    </body>
 
 </html>

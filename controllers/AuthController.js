@@ -54,7 +54,7 @@ module.exports.login_get = (req, res) => {
 module.exports.signup_post = async (req, res) => {
     const { email, password, username, name, surname } = req.body;
 
-    console.log("POST", email);
+    console.log("POST", username);
 
     try {
       const user = await User.create({ email, password, username, name, surname, schema_version: "2" });
@@ -72,10 +72,12 @@ module.exports.signup_post = async (req, res) => {
 };
 
 module.exports.login_post = async (req, res) => {
-    const {email, password} = req.body;
+    const {username, password} = req.body;
+
+    console.log("asd")
 
     try{
-        const user = await User.login(email, password);
+        const user = await User.login(username, password);
         const token = createToken(user._id);
         res.cookie('jwt', token, {httpOnly: true, maxAge: maxAge * 1000});
         res.status(200).json({ user: user._id});

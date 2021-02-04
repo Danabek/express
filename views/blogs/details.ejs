@@ -3,62 +3,61 @@
 
 <%- include('../partials/head.ejs') %>
 
-<body>
+    <body>
 
-    <%- 
-        include('../partials/header.ejs')
-    %>
+        <%- include('../partials/header.ejs') %>
+
+            <%- include('../partials/aside.ejs') %>
 
 
+                <main class="main">
+                    <article class="hero">
+                        <h1 class=".heading heading--large">
+                            <%= blog.title %>
+                        </h1>
+                        <a id="delete" class="delete" href="" data-doc="<%= blog._id %>">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" />
+                            </svg>
+                            Delete
+                        </a>
+                        <p>
 
-    <main class="main">
-        <article class="hero">
-            <h1 class=".heading heading--large">
-                <%= blog.title %>
-            </h1>
-            <a id="delete" class="delete" href="" data-doc="<%= blog._id %>">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0z" fill="none" />
-                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" /></svg>
-                Delete
-            </a>
-            <p>
+                        </p>
+                    </article>
 
-            </p>
-        </article>
+                    <article>
+                        <p>
+                            <%= blog.body %>
+                        </p>
 
-        <article>
-            <p>
-                <%= blog.body %>
-            </p>
+                    </article>
 
-        </article>
+                </main>
+                <%- include('../partials/footer.ejs') %>
 
-    </main>
-    <%- 
-    include('../partials/footer.ejs')
-    %>
+                    <script>
+                        const trashcan = document.getElementById('delete');
 
-    <script>
-        const trashcan = document.getElementById('delete');
+                        trashcan.addEventListener('click', (e) => {
+                            e.preventDefault();
 
-        trashcan.addEventListener('click', (e) => {
-            e.preventDefault();
+                            const endpoint = `/blogs/${trashcan.dataset.doc}`;
 
-            const endpoint = `/blogs/${trashcan.dataset.doc}`;
-
-            fetch(endpoint, {
-                method: 'DELETE',
-            })
-            .then((response) => {
-                return response.json()
-            })
-            .then((data) => {
-                window.location.href = data.redirect;
-            })
-            .catch(err => console.log(err))
-        })
-    </script>
-</body>
+                            fetch(endpoint, {
+                                method: 'DELETE',
+                            })
+                                .then((response) => {
+                                    return response.json()
+                                })
+                                .then((data) => {
+                                    window.location.href = data.redirect;
+                                })
+                                .catch(err => console.log(err))
+                        })
+                    </script>
+    </body>
 
 </html>
