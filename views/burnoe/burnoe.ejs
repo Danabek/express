@@ -68,6 +68,34 @@
             flex-direction: column;
         }
     }
+
+    .hero {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .hero .hero-links {
+        flex: 3 1 700px;
+    }
+
+    .hero .hero-links {
+        flex: 1 1 100px;
+    }
+
+    .features section {
+        margin-right: 50px;
+        width: 50%;
+    }
+
+    .features section:last-child {
+        margin-right: 0px;
+    }
+
+    @media screen and (max-width: 500px) {
+        .hero {
+            margin-top: 0;
+        }
+    }
 </style>
 
 <%- include('../partials/head.ejs') %>
@@ -90,7 +118,7 @@
                                 </svg>
 
                                 <h1 class=".heading heading--normal">
-                                    Burnoe 
+                                    Burnoe
                                 </h1>
                             </div>
                             <div>
@@ -102,62 +130,49 @@
 
                         </section>
                         <section class="hero-links">
-                            <h2 class="heading--lvl4">
+                            <h2 class="heading--lvl4 medium-color">
                                 related content
                             </h2>
 
                             <ul class="list">
                                 <li>
-                                    <a href="/burnoe/2020">2020 August report</a>
+                                    <a class="disabled-color" href="/burnoe/2020">2020 Август отчет</a>
                                 </li>
                                 <li>
-                                    <a href="/burnoe/2019">2019 August report</a>
+                                    <a class="disabled-color" href="/burnoe/2019">2019 Август отчет</a>
                                 </li>
                                 <li>
-                                    <a href="/burnoe/2018">2018 August report</a>
+                                    <a class="disabled-color" href="/burnoe/2018">2018 Август отчет</a>
                                 </li>
                                 <li>
-                                    <a href="/burnoe/2017">2017 August report</a>
+                                    <a class="disabled-color" href="/burnoe/2017">2017 Август отчет</a>
                                 </li>
                             </ul>
                         </section>
-                        <p>
-
-                        </p>
                     </article>
 
                     <article class="features">
                         <section>
-                            <h3>Goals</h3>
+                            <h3><a class="primary-color" href="/burnoe/goals"> Цели </a> </h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sapiente itaque impedit
-                                quod, velit asperiores amet nesciunt est hic praesentium.
+                                Наши цели на будещий год
                             </p>
                         </section>
-                        <section>
-                            <h3>Nonimines</h3>
+                        <section class="disabled-color">
+                            <h3>Номинации</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sapiente itaque impedit
-                                quod, velit asperiores amet nesciunt est hic praesentium.
+                                Не паникуйте скоро все доделаю, но это не точно!
                             </p>
                         </section>
-                        <section>
-                            <h3>Momets</h3>
+                        <section class="disabled-color">
+                            <h3>Моменты</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sapiente itaque impedit
-                                quod, velit asperiores amet nesciunt est hic praesentium.
+                                Не паникуйте скоро все доделаю, но это не точно!
                             </p>
                         </section>
-                    </article>
-
-                    <article>
-                        <iframe scrolling="no" allowfullscreen="" gesture="media" allow="autoplay; encrypted-media"
-                            src="https://yastatic.net/yandex-video-player-iframe-api-bundles/1.0-5946/frame.html#post_message_config=true&amp;vsid=7dab7a075f15e6f7165ec2610fbac920461bffd27642xWEBx5946x1610008739&amp;from=disk"
-                            style="width: 100%; height: 100%; border-width: 0px; display: block;"></iframe>
                     </article>
 
                 </main>
-                <%- include('../partials/footer.ejs') %>
     </body>
 
 </html>

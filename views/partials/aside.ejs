@@ -39,13 +39,37 @@
     .aside-btn--active {
         opacity: 1;
     }
+
+    @media screen and (max-width: 500px) {
+        .aside-wrapper {
+            height: 60px;
+            width: 100%;
+            bottom: 0;
+            background-color: black;
+            z-index: 10;
+        }
+
+        .main {
+            margin-left: 0;
+            padding: 0 20px;
+        }
+
+        .main-nav {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 34.4px;
+        }
+    }
 </style>
 
-<aside>
+<aside class="aside">
     <div class="aside-wrapper">
         <ul class="main-nav">
             <li>
-                <a class="aside-btn  <%- title === " home" ? "aside-btn--active" : "" %> "
+                <a class="aside-btn  <%- title === "home" ? "aside-btn--active" : "" %> "
                     href="/">
                     <svg class="icon" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" style=""
                         class="style-scope yt-icon">
@@ -53,24 +77,24 @@
                             <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8" class="style-scope yt-icon"></path>
                         </g>
                     </svg>
-                    <span>Home</span>
+                    <span>Главное</span>
                 </a>
 
             </li>
             <li>
-                <a class="aside-btn  <%- title ===  " blog" ? "aside-btn--active" : "" %> "
-                    href="/blog/all">
+                <a class="aside-btn  <%- title ===  "blog" ? "aside-btn--active" : "" %> "
+                    href="/blog">
                     <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px"
                         height="18px">
                         <path d="M0 0h24v24H0z" fill="none" />
                         <path
                             d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                     </svg>
-                    <span>Blog</span>
+                    <span>Блог</span>
                 </a>
             </li>
             <li>
-                <a class="aside-btn  <%- title === " burnoe" ? "aside-btn--active" : "" %> "
+                <a class="aside-btn  <%- title ===  "burnoe" ? "aside-btn--active" : "" %> "
                     href="/burnoe">
                     <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px"
                         height="18px">
@@ -78,19 +102,19 @@
                         <path
                             d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                     </svg>
-                    <span>Burnoe</span>
+                    <span>Бурное</span>
                 </a>
             </li>
             <li>
 
-                <a class="aside-btn" href="/about">
+                <a class="aside-btn <%- title === "about" ? "aside-btn--active" : "" %>" href="/about">
                     <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px"
                         height="18px">
                         <path d="M0 0h24v24H0z" fill="none" />
                         <path
                             d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                     </svg>
-                    <span>About</span>
+                    <span>О сайте</span>
                 </a>
             </li>
         </ul>

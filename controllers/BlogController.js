@@ -5,7 +5,7 @@ const Blog = require('../models/blog');
 const blog_index = (req, res) => {
   Blog.find().sort({ createdAt: -1 })
     .then(result => {
-      res.render('blog/blog', { blogs: result, title: 'Blog' });
+      res.render('blogs/blogs', { blogs: result, title: 'blog' });
     })
     .catch(err => {
       console.log(err);

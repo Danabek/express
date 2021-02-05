@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<style>
+    article {
+        padding: 40px 0px;
+    }
+
+    .hero {
+        display: flex;
+        margin-top: 56px;
+    }
+
+    .hero-main__head {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    .hero-main__icon {
+        width: 50px;
+        margin-right: 24px;
+
+    }
+
+    .list li {
+        padding-bottom: 5px;
+    }
+
+    .hero-links {
+        flex: 1;
+    }
+
+    .hero-main {
+        flex: 2;
+    }
+
+
+
+    .heading--lvl4 {
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    .features {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .features section {
+        flex: 1 1 300px;
+    }
+
+    .capture {
+        font-family: monospace;
+        text-transform: uppercase;
+    }
+
+    @media screen and (max-width: 500px) {
+        .hero {
+            margin-top: 0;
+        }
+    }
+</style>
+
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/header.ejs') %>
+            <%- include('../partials/aside.ejs') %>
+                <main class="main">
+                    <article class="hero border-bottom">
+                        <section class="hero-main">
+                            <div class="hero-main__head">
+                                <h1 class=".heading heading--normal">
+                                    Цели
+                                </h1>
+                            </div>
+                            <div>
+                                <p>
+                                    Хотите добавить пишите мне в личку. Здесь пока все цели независемо от времени
+                                </p>
+                            </div>
+
+                        </section>
+
+                        <p>
+
+                        </p>
+                    </article>
+
+                    <article>
+                        <section>
+                            <h3>
+                                Данабек
+                            </h3>
+                            <div id="danabek_list_counter" class="capture">
+                            </div>
+                            <ul id="list_danabek" class="list">
+                                <li>
+                                    Сделать портфолио
+                                </li>
+                                <li>
+                                    Получить сертификат JLPT N4
+                                </li>
+                                <li>
+                                    Получить сертификат ELS c баллом 7.0
+                                </li>
+                                <li>
+                                    Накопить финансовую подушку в сумме 3 своих зарплаты
+                                </li>
+                                <li>
+                                    Бросить курить
+                                </li>
+                                <li>
+                                    Купить SSD для ноута
+                                </li>
+                                <li>
+                                    Научиться React Statement Manegment
+                                </li>
+                                <li>
+                                    Купить жесткий диск на 1 ТБ
+                                </li>
+                                <li>
+                                    Пройти Курс по алгоритмам и структуры данных
+                                </li>
+                                <li>
+                                    Сделать игру платформер на javascript
+                                </li>
+                                <li>
+                                    Создать клон Zoom
+                                </li>
+                                <li>
+                                    Создать проект Мега-Чат
+                                </li>
+                                <li>
+                                    Выложить на сайт все видео
+                                </li>
+
+                                <li>
+                                    Подтянуть Git
+                                </li>
+                                <li>
+                                    Купить велик
+                                </li>
+                                <li>
+                                    Открыть счет ЖилСтройБанк
+                                </li>
+                                <li>
+                                    Приобрести Google Pixel
+                                </li>
+                                <li>
+                                    Оцифровать все семейные фотографии
+                                </li>
+                                <li>
+                                    Пройти курс Frontend от EPAM
+                                </li>
+                                <li>
+                                    Участвовать в турниру по киберспорту
+                                </li>
+                                <li>
+                                    Зарплата в 200 000 тнг
+                                </li>
+                                <li>
+                                    Посетить Риддер
+                                </li>
+                                <li>
+                                    Посмотреть все достопремечательности Алматы
+                                </li>
+                                <li>
+                                    Дописать ужастик
+                                </li>
+                                <li>
+                                    Написать статью
+                                </li>
+                                <li>
+                                    Пройти курс по Node.js
+                                </li>
+                                <li>
+                                    Посетить AlmaCon
+                                </li>
+                                <li>
+                                    Посетить Comiccon
+                                </li>
+                                <li>
+                                    Участвовать в озвучке
+                                </li>
+                                <li>
+                                    Создать группу программистов
+                                </li>
+                                <li>
+                                    Посетить TEAxAlmaty
+                                </li>
+                                <li>
+                                    Пробежать марафон 22км
+                                </li>
+                                <li>
+                                    Пройти курс по MongoDB
+                                </li>
+                                <li>
+                                    Принять участие в турнире по Алгоритмам
+                                </li>
+                                <li>
+                                    Приютить кота и назвать мистер Полноч
+                                </li>
+                                <li>
+                                    Сверстать лэндинг
+                                </li>
+                                <li>
+                                    Получить награду Awwwards
+                                </li>
+                                <li>
+                                    Получить работу в Яндекс
+                                </li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>
+                                Самар
+                            </h3>
+                            <div id="samar_list_counter" class="capture">
+                            </div>
+                            <ul id="list_samar" class="list">
+                                <li>
+                                    Квартира
+                                </li>
+                                <li>
+                                    Микрофон
+                                </li>
+                                <li>
+                                    Звуковая карта
+                                </li>
+                                <li>
+                                    Встреча с Алсу
+                                </li>
+                                <li>
+                                    Уехать в Германию
+                                </li>
+                            </ul>
+                        </section>
+                    </article>
+                    <script>
+                        let danabekList = document.getElementById('list_danabek')
+                        let samarList = document.getElementById('list_samar')
+
+                        let danabekListCounter = document.getElementById('danabek_list_counter')
+                        let samarListCounter = document.getElementById('samar_list_counter')
+
+                        danabekListCounter.innerHTML = `Целей ${danabekList.children.length}`
+                        samarListCounter.innerHTML = `Целей ${samarList.children.length}`
+
+                    </script>
+
+                </main>
+    </body>
+
+</html>

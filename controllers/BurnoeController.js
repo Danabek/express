@@ -6,7 +6,7 @@ const burnoe_reports = (req, res) => {
 }
 
 const burnoe_index = (req, res) => {
-    res.render('burnoe/burnoe', { title: 'Burnoe' });
+    res.render('burnoe/burnoe', { title: 'burnoe' });
 };
 
 const burnoe_details = (req, res) => {
@@ -47,11 +47,16 @@ const burnoe_delete = (req, res) => {
     });
 };
 
+const burnoe_goals = (req, res) => {
+  res.render('burnoe/goals', {title: 'burnoe'});
+}
+
 module.exports = {
   burnoe_index, 
   burnoe_details, 
   burnoe_create_get, 
   burnoe_create_post, 
   burnoe_delete,
-  burnoe_reports
+  burnoe_reports,
+  burnoe_goals,
 };

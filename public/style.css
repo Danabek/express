@@ -9,7 +9,7 @@ html {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #121212;
-    color: rgba(255, 255, 255, 0.60);
+    color: #ffffff
 }
 
 .header-top {
@@ -221,7 +221,7 @@ html {
 }
 
 a{
-    color: #222;
+    color: inherit !important;
 }
 
 
@@ -290,8 +290,9 @@ a{
     height: 100%;
     object-fit: contain;
 }
-.cursiv{
-    
+
+.primary-color{
+    opacity: 0.87;
 }
 
 .login__alternative{
@@ -380,3 +381,25 @@ a{
 .border-bottom{
     border-bottom: 1px solid #ccc;
 }
+
+.primary-color{
+    opacity: 0.87;
+}
+
+.medium-color{
+    opacity: 0.60;
+}
+
+.disabled-color{
+    opacity: 0.38;
+}
+
+.list li {
+    opacity: 0.6;
+}
+
+body p,
+body a {
+    opacity: 0.60;
+}
+

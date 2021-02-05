@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+    .login {
+        flex-wrap: wrap;
+    }
+
+    .login section {
+        flex: 1 1 500px;
+    }
+
+    @media screen and (max-width: 500px) {
+        body .main {
+            padding: 10px;
+            margin: 0
+        }
+
+        .login_banner {
+            display: none;
+        }
+    }
+</style>
+
 <%- include('./partials/head.ejs') %>
 
     <body>
@@ -14,12 +35,11 @@
                     <h1 class=".heading heading--large">
                         Log in
                     </h1>
-                    <a class="anchor anchor--opacity" href="/signup">
+                    <!-- <a class="anchor anchor--opacity" href="/signup">
                         <h2 class=".heading heading--large">
                             Sign up
                         </h2>
-
-                    </a>
+                    </a> -->
 
                 </article>
 
@@ -49,7 +69,7 @@
 
                     </section>
 
-                    <section>
+                    <section class="login_banner">
                         <img alt="デザイン事務所ココドル｜大阪｜SEA TO SUMMITびわ湖東近江のTシャツ#design #graphicdesign #graphicdesigner #art #logo #logodesign #illustrator #illustration #event #cocodoru #デザイン #Tシャツ #イラスト #アート #線画"
                             class="img--responsive" importance="auto" loading="auto"
                             src="https://i.pinimg.com/564x/64/fe/86/64fe86a2488ed30f1ace46e95bfc8703.jpg">

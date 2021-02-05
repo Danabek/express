@@ -7,6 +7,9 @@ const router = express.Router();
 
 router.get('/', requireAuth, burnoeController.burnoe_index);
 
+router.get('/goals', burnoeController.burnoe_goals)
+
+
 router.get('/:year', burnoeController.burnoe_reports)
 
 
