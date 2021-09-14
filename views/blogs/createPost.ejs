@@ -1,40 +1,37 @@
+<style>
+    .textarea {
+        background-color: transparent;
+    }
+</style>
 <!DOCTYPE html>
 <html lang="en">
-
 <%- include('../partials/head.ejs') %>
 
-<body>
-    <%- 
-        include('../partials/header.ejs')
-    %>
-                <%- include('../partials/aside.ejs') %>
-
-    <main class="main">
-        <h1 class=".heading heading--large">
-            New Post
-        </h1>
-        <form class="form" action="/blogs" method="POST">
-            <div>
-                <label for="">Title</label>
-                <input name="title" type="text">
-            </div>
-            <div>
-                <label for="">Snippet</label>
-                <input name="snippet" type="text">
-            </div>
-            <div>
-                <label for="">Text</label>
-                <textarea name="body" id="" cols="30" rows="10"></textarea>
-            </div>
-            <div>
-                <button class="btn btn--primary">Post</button>
-            </div>
-
-        </form>
-    </main>
-    <%- 
-    include('../partials/footer.ejs')
-    %>
-</body>
+    <body>
+        <%- include('../partials/header.ejs') %>
+            <%- include('../partials/aside.ejs') %>
+                <main class="main">
+                    <h1 class=".heading heading--large">
+                        New Post
+                    </h1>
+                    <form class="form" action="/blog" method="POST">
+                        <div>
+                            <label for="">Title</label>
+                            <input name="title" type="text">
+                        </div>
+                        <div>
+                            <label for="">Snippet</label>
+                            <input name="snippet" type="text">
+                        </div>
+                        <div>
+                            <label for="">Text</label>
+                            <textarea class="textarea" name="body" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        <div>
+                            <button class="btn btn--primary">Post</button>
+                        </div>
+                    </form>
+                </main>
+    </body>
 
 </html>

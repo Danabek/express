@@ -21,6 +21,10 @@ const burnoe_details = (req, res) => {
     });
 };
 
+const burnoe_nominee = (req, res) => {
+  res.render('burnoe/nominee', {title: 'nominee' })
+}
+
 const burnoe_create_get = (req, res) => {
   res.render('burnoes/createPost', { title: 'Create a new burnoe' });
 };
@@ -59,4 +63,5 @@ module.exports = {
   burnoe_delete,
   burnoe_reports,
   burnoe_goals,
+  burnoe_nominee,
 };

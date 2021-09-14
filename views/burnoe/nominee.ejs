@@ -21,6 +21,7 @@
     .hero-main__icon {
         width: 50px;
         margin-right: 24px;
+
     }
 
     .list {
@@ -32,16 +33,11 @@
     }
 
     .hero-links {
-        padding: 26px;
         flex: 1;
     }
 
     .hero-main {
         flex: 2;
-    }
-
-    .list li {
-        margin-bottom: 8px;
     }
 
 
@@ -56,41 +52,15 @@
     .heading--lvl4 {
         text-transform: uppercase;
         font-size: 14px;
-        font-family: monospace;
     }
 
     .features {
         display: flex;
-    }
-
-    @media screen and (max-width: 500px) {
-        .features {
-            flex-direction: column;
-        }
-    }
-
-    .hero {
-        display: flex;
         flex-wrap: wrap;
     }
 
-    .hero .hero-links {
-        flex: 3 1 700px;
-    }
-
-    .hero .hero-links {
-        flex: 1 1 100px;
-    }
-
     .features section {
-        margin-right: 50px;
-        width: 50%;
-    }
-
-    .features section:hover {}
-
-    .features section:last-child {
-        margin-right: 0px;
+        flex: 1 1 300px;
     }
 
     @media screen and (max-width: 500px) {
@@ -120,7 +90,7 @@
                                 </svg>
 
                                 <h1 class=".heading heading--normal">
-                                    Burnoe
+                                    <%- title %>
                                 </h1>
                             </div>
                             <div>
@@ -131,48 +101,8 @@
                             </div>
 
                         </section>
-                        <section class="hero-links">
-                            <h2 class="heading--lvl4 medium-color">
-                                Burnoe
-                            </h2>
-
-                            <ul class="list">
-                                <li>
-                                    <a class="disabled-color" href="/burnoe/2020">2020 August report</a>
-                                </li>
-                                <li>
-                                    <a class="disabled-color" href="/burnoe/2019">2019 August report</a>
-                                </li>
-                                <li>
-                                    <a class="disabled-color" href="/burnoe/2018">2018 August report</a>
-                                </li>
-                                <li>
-                                    <a class="disabled-color" href="/burnoe/2017">2017 August report</a>
-                                </li>
-                            </ul>
-                        </section>
                     </article>
 
-                    <article class="features">
-                        <section>
-                            <h3><a class="primary-color" href="/burnoe/goals"> Goals </a> </h3>
-                            <p>
-
-                            </p>
-                        </section>
-                        <section>
-                            <h3><a class="primary-color" href="/burnoe/nominee"> Nominee </a> </h3>
-                            <p>
-                                Lorem, ipsum dolor.
-                            </p>
-                        </section>
-                        <section class="disabled-color">
-                            <h3>Moments</h3>
-                            <p>
-                                Lorem, ipsum dolor.
-                            </p>
-                        </section>
-                    </article>
 
                 </main>
     </body>

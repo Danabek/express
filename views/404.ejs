@@ -2,25 +2,100 @@
 <html lang="en">
 
 <%- include('./partials/head.ejs') %>
+    <style>
+        .sandbox {
+            border: 1px solid #ccc;
+            margin: 15px auto;
+            max-width: 600px;
+            min-height: 500px;
+            border-radius: 3px;
+            display: flex;
+        }
 
-<body>
-    <%- 
-        include('./partials/header.ejs')
-    %>
-    <%- include('./partials/aside.ejs') %>
+        .origin {
+            border-right: 1px solid #ccc;
+        }
 
-    <main class="main">
-        <h1 class=".heading heading--large">
-            404 page
-        </h1>
-        <h2>
-            Looks like tou lost
-        </h2>
-        <a href="/">Back to home</a>
-    </main>
-    <%- 
-        include('./partials/footer.ejs')
-    %>
-</body>
+        .sandbox section {
+            flex: 1;
+        }
+
+        .big-header {
+            opacity: 0.15;
+            font-size: 4em;
+            position: absolute;
+            top: 0%;
+        }
+
+        .dropzone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .draggable {
+            padding: 15px;
+            border: 1px solid #ccc;
+            display: inline-block;
+        }
+    </style>
+
+    <body>
+        <%- include('./partials/header.ejs') %>
+            <%- include('./partials/aside.ejs') %>
+
+                <main class="main">
+                    <article>
+                        <h1 class=".heading heading--large">
+                            404 page
+                        </h1>
+                        <h2>
+                            Looks like tou lost
+                        </h2>
+                        <a href="/">Back to home</a>
+                    </article>
+                    <article class="sandbox">
+                        <section class="origin">
+
+                            <div draggable="true" class="draggable" id="draggale" ondragstart="onDragStart(event);">
+                                draggable
+                            </div>
+                        </section>
+                        <section ondragover="onDragOver(event);" ondragover="onDragOver(event);" ondrop="onDrop(event);"
+                            class="dropzone">
+                            <h3 class="big-header">
+                                dropzone
+                            </h3>
+                        </section>
+                    </article>
+                </main>
+                <script>
+                    function onDragStart() {
+                        event
+                            .dataTransfer
+                            .setData('text/plain', event.target.id)
+                        event
+                            .currentTarget
+                            .style
+                            .backgroundColor = 'yellow';
+                    }
+                    function onDragOver(event) {
+                        event.preventDefault();
+                    }
+                    function onDrop(event) {
+                        const id = event
+                            .dataTransfer
+                            .getData('text');
+                        const draggableElement = document.getElementById(id);
+                        const dropzone = event.target;
+                        dropzone.appendChild(draggableElement);
+                        event
+                            .dataTransfer
+                            .clearData();
+                    }
+                </script>
+                <%- include('./partials/footer.ejs') %>
+    </body>
 
 </html>
